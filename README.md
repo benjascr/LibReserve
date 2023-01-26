@@ -15,13 +15,11 @@ LibReserve es una página web de reserva de salas y puestos de estudio para la b
 
 - Usuario: Representa a las personas interesadas del sistema.
 
-- Producto: Representa las salas y puerstos del sistema.
+- Producto: Representa las salas y puestos del sistema.
 
 - Reserva: Representa la reserva de sala y/o puesto de lectura del usuario.
 
-- Comentario: Representa el comnetario que un usuario deja sobre la biblioteca.
-
-- Información: Representa toda la información útil ofrecida por el sistema.
+- Comentario: Representa el comentario que un usuario deja sobre la biblioteca.
 
 ### Funcionalidades del servicio interno.
 - Envío de correo electrónico al usuario tras registrarse y al realizar una reserva.
