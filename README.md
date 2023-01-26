@@ -1,6 +1,19 @@
-# Práctica obligatoria Desarrollo de Aplicaciones Distribuidas.
-### Nombre.
-LibReserve
+# LibReserve
+Práctica obligatoria para la asignatura Desarrollo de Aplicaciones Distribuidas de la Universidad Rey Juan Carlos.
+
+## Autor
+Beniamin Scrobota Campean:
+- [benjascr](https://github.com/benjascr)
+
+## Lista de contenidos.
+- [Fase 1](#fase-1)
+  - [Descripción](#descripción)
+  - [Funcionalidades](#funcionalidades)
+  - [Entidades](#entidades)
+  - [Funcionalidades del servicio interno](#funcionalidades-del-servicio-interno)
+- [Fase 2](#fase-2)
+
+## Fase 1.
 
 ### Descripción. 
 LibReserve es una página web de reserva de salas y puestos de estudio para la biblioteca de la Universidad Rey Juan Carlos.
@@ -27,3 +40,5 @@ LibReserve es una página web de reserva de salas y puestos de estudio para la b
 - Generación de un código QR que representa cada reserva en formato pdf.
 
 - Chat entre todos los usuarios del sistema.
+
+## Fase 2.
