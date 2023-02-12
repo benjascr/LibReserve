@@ -5,12 +5,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class HelloWorldController {
+public class InicialController {
 
 	@GetMapping("/salute")
 	public String salute(Model model) { // los metodos de un controladro devuelven String y reciben Model
-		
-		model.addAttribute("name", "World");
 		
 		return "salute";
 	
