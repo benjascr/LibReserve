@@ -5,13 +5,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class HomeController {
+public class SalaController {
 
-	@GetMapping("/home")
+	@GetMapping("/sala")
     public String home(Model model) {
-        //model.addAttribute("universidad", "Universidad Rey Juan Carlos");
-
-        return "home";
+        return "sala";
     }
 
+	
+	
 }
