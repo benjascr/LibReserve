@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>LibReserve</title>
+    <style>
+      .header {
+        background-image: url("images/biblioteca.jpeg");
+        background-size: cover;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .header h1 {
+        color: #337ab7;
+        font-size: 64px;
+        text-shadow: 2px 2px #333;
+        text-align: center;
+        background-color: white;
+        padding: 10px;
+        border-radius: 10px;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: center;
+        margin-top: 100px;
+      }
+
+      .buttons button {
+        background-color: #337ab7;
+        color: white;
+        padding: 20px 40px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        margin: 0 20px;
+        cursor: pointer;
+      }
+
+      .map {
+        width: 100%;
+        height: 400px;
+        margin-top: 100px;
+      }
+
+      .schedule {
+        text-align: center;
+        margin-top: 100px;
+      }
+
+      .schedule h2 {
+        font-size: 36px;
+      }
+
+      .schedule p {
+        font-size: 18px;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Universidad Rey Juan Carlos</h1>
+    </div>
+    <div class="buttons">
+      <button onclick="window.location.href='/reservar-sala'">Reservar Sala</button>
+      <button onclick="window.location.href='/reservar-puesto'">Reservar Puesto de Lectura</button>
+    </div>
+    <div class="map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1403.7634706715208!2d-3.70379!3d40.416709999999996!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42288e7c8ba1f1%3A0x9e6ce6869b09f3c3!2sBiblioteca+Nacional+de+Espa%C3%B1a!5e0!3m2!1ses!2ses!4v1390772091604"
+        width="100%"
+        height="100%"
+        frameborder="0"
+        style="border:0"
+        allowfullscreen=""
+        aria-hidden="false"
+        tabindex="0"
+      ></iframe>
+    </div>
+    <div class="schedule">
+      <h2>Horario de la Biblioteca</h2>
+      <p>Lunes a Viernes: 9:00 AM - 9:00 PM</p>
+      <p>Sábados: 10:00 AM - 2:00 PM</p>
+      <p>Domingos: Cerrado</p>
+    </div>
+  </body>
+</html>
