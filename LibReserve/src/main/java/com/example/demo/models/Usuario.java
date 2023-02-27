@@ -13,9 +13,12 @@ public class Usuario {
 	private String contrasena;
 	
 	public Usuario() {}
+	
+	public Usuario(String nombre) {
+		this.nombre = nombre;
+	}
 
-	public Usuario(int id, String nombre, String apellidos, String correo, String contrasena) {
-		this.id = id;
+	public Usuario(String nombre, String apellidos, String correo, String contrasena) {
 	    this.nombre = nombre;
 	    this.apellidos = apellidos;
 	    this.correo = correo;

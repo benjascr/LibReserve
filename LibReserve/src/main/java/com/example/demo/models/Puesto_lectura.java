@@ -14,6 +14,12 @@ public class Puesto_lectura {
     public Puesto_lectura() {
     }
     
+    public Puesto_lectura(String nombre, String descripcion, boolean disponible) {
+    	this.nombre = nombre;
+    	this.descripcion = descripcion;
+    	this.disponible = disponible;
+    }
+    
     public int getId() {
         return id;
     }

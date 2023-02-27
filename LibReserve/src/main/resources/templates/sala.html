@@ -1,5 +1,121 @@
 {{>header}}
 
-<h2>Salas</h2>
+<style>
+
+		.container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			margin-top: 50px;
+			margin-bottom: 50px;
+			width: 100%;
+		}
+
+		.sala {
+			background-color: #f8f8f8;
+  			border: 1px solid #ddd;
+  			border-radius: 5px;
+  			box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  			padding: 20px;
+  			margin: 10px;
+  			width: auto;
+		}
+
+		.sala h2 {
+			font-size: 24px;
+			font-weight: bold;
+			margin: 0;
+			text-align: center;
+			margin-bottom: 10px;
+		}
+
+		.sala p {
+			font-size: 18px;
+			margin: 0;
+			text-align: center;
+			margin-bottom: 25px;
+		}
+
+		.botones {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			width: 100%;
+			margin-top: 20px;
+		}
+
+		.botones button {
+			font-size: 18px;
+			font-weight: bold;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		.botones button.seleccionado {
+			background-color: #0066cc;
+			color: #fff;
+		}
+		
+		.franja-horaria-botones {
+  			margin-right: 25px;
+		}
+	</style>
+
+	<div class="container">
+  		<div class="sala">
+    		<h2>Sala A</h2>
+    		<p>Horario disponible: 10:00 - 20:00</p>
+    		<form method="post" action="/seleccionarFranjaHoraria">
+				<button type="submit" name="franjaHoraria" value="09:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '09:00' ? 'franja-horaria-seleccionada' : ''}">09:00 - 10:00</button>
+				<button type="submit" name="franjaHoraria" value="10:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '10:00' ? 'franja-horaria-seleccionada' : ''}">10:00 - 11:00</button>
+			    <button type="submit" name="franjaHoraria" value="11:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '11:00' ? 'franja-horaria-seleccionada' : ''}">11:00 - 12:00</button>
+			    <button type="submit" name="franjaHoraria" value="12:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '12:00' ? 'franja-horaria-seleccionada' : ''}">12:00 - 13:00</button>
+			    <button type="submit" name="franjaHoraria" value="13:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '13:00' ? 'franja-horaria-seleccionada' : ''}">13:00 - 14:00</button>
+			    <button type="submit" name="franjaHoraria" value="14:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '14:00' ? 'franja-horaria-seleccionada' : ''}">14:00 - 15:00</button>
+			    <button type="submit" name="franjaHoraria" value="15:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '15:00' ? 'franja-horaria-seleccionada' : ''}">15:00 - 16:00</button>
+			    <button type="submit" name="franjaHoraria" value="16:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '16:00' ? 'franja-horaria-seleccionada' : ''}">16:00 - 17:00</button>
+			    <button type="submit" name="franjaHoraria" value="17:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '17:00' ? 'franja-horaria-seleccionada' : ''}">17:00 - 18:00</button>
+			    <button type="submit" name="franjaHoraria" value="18:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '18:00' ? 'franja-horaria-seleccionada' : ''}">18:00 - 19:00</button>
+			    <button type="submit" name="franjaHoraria" value="19:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '19:00' ? 'franja-horaria-seleccionada' : ''}">19:00 - 20:00</button>
+    		</form>
+		</div>
+		
+		<div class="sala">
+    		<h2>Sala B</h2>
+    		<p>Horario disponible: 10:00 - 20:00</p>
+    		<form method="post" action="/seleccionarFranjaHoraria">
+				<button type="submit" name="franjaHoraria" value="09:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '09:00' ? 'franja-horaria-seleccionada' : ''}">09:00 - 10:00</button>
+				<button type="submit" name="franjaHoraria" value="10:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '10:00' ? 'franja-horaria-seleccionada' : ''}">10:00 - 11:00</button>
+			    <button type="submit" name="franjaHoraria" value="11:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '11:00' ? 'franja-horaria-seleccionada' : ''}">11:00 - 12:00</button>
+			    <button type="submit" name="franjaHoraria" value="12:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '12:00' ? 'franja-horaria-seleccionada' : ''}">12:00 - 13:00</button>
+			    <button type="submit" name="franjaHoraria" value="13:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '13:00' ? 'franja-horaria-seleccionada' : ''}">13:00 - 14:00</button>
+			    <button type="submit" name="franjaHoraria" value="14:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '14:00' ? 'franja-horaria-seleccionada' : ''}">14:00 - 15:00</button>
+			    <button type="submit" name="franjaHoraria" value="15:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '15:00' ? 'franja-horaria-seleccionada' : ''}">15:00 - 16:00</button>
+			    <button type="submit" name="franjaHoraria" value="16:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '16:00' ? 'franja-horaria-seleccionada' : ''}">16:00 - 17:00</button>
+			    <button type="submit" name="franjaHoraria" value="17:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '17:00' ? 'franja-horaria-seleccionada' : ''}">17:00 - 18:00</button>
+			    <button type="submit" name="franjaHoraria" value="18:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '18:00' ? 'franja-horaria-seleccionada' : ''}">18:00 - 19:00</button>
+			    <button type="submit" name="franjaHoraria" value="19:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '19:00' ? 'franja-horaria-seleccionada' : ''}">19:00 - 20:00</button>
+    		</form>
+		</div>
+		
+		<div class="sala">
+    		<h2>Sala C</h2>
+    		<p>Horario disponible: 10:00 - 20:00</p>
+    		<form method="post" action="/seleccionarFranjaHoraria">
+				<button type="submit" name="franjaHoraria" value="09:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '09:00' ? 'franja-horaria-seleccionada' : ''}">09:00 - 10:00</button>
+				<button type="submit" name="franjaHoraria" value="10:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '10:00' ? 'franja-horaria-seleccionada' : ''}">10:00 - 11:00</button>
+			    <button type="submit" name="franjaHoraria" value="11:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '11:00' ? 'franja-horaria-seleccionada' : ''}">11:00 - 12:00</button>
+			    <button type="submit" name="franjaHoraria" value="12:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '12:00' ? 'franja-horaria-seleccionada' : ''}">12:00 - 13:00</button>
+			    <button type="submit" name="franjaHoraria" value="13:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '13:00' ? 'franja-horaria-seleccionada' : ''}">13:00 - 14:00</button>
+			    <button type="submit" name="franjaHoraria" value="14:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '14:00' ? 'franja-horaria-seleccionada' : ''}">14:00 - 15:00</button>
+			    <button type="submit" name="franjaHoraria" value="15:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '15:00' ? 'franja-horaria-seleccionada' : ''}">15:00 - 16:00</button>
+			    <button type="submit" name="franjaHoraria" value="16:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '16:00' ? 'franja-horaria-seleccionada' : ''}">16:00 - 17:00</button>
+			    <button type="submit" name="franjaHoraria" value="17:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '17:00' ? 'franja-horaria-seleccionada' : ''}">17:00 - 18:00</button>
+			    <button type="submit" name="franjaHoraria" value="18:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '18:00' ? 'franja-horaria-seleccionada' : ''}">18:00 - 19:00</button>
+			    <button type="submit" name="franjaHoraria" value="19:00" class="franja-horaria-botones ${salaController.getFranjaHorariaSeleccionada() == '19:00' ? 'franja-horaria-seleccionada' : ''}">19:00 - 20:00</button>
+    		</form>
+		</div>
 
 {{>footer}}
