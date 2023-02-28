@@ -14,6 +14,9 @@ public class Reserva {
 
     @ManyToOne
     private Sala sala;
+    
+    @ManyToOne
+    private Puesto_lectura puesto;
 
     private Date fechaInicio;
     private Date fechaFin;
@@ -32,6 +35,13 @@ public class Reserva {
     	this.fechaFin = fechaFin;
     	this.usuario = usuario;
     	this.sala = sala;
+    }
+    
+    public Reserva(Date fechaInicio, Date fechaFin, Usuario usuario, Puesto_lectura puesto) {
+    	this.fechaInicio = fechaInicio;
+    	this.fechaFin = fechaFin;
+    	this.usuario = usuario;
+    	this.puesto = puesto;
     }
 
     public int getId() {

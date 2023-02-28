@@ -120,6 +120,7 @@ public class LibReserveController {
 	    return "perfil";
 	}
 	
+	//-----
 	
 	@GetMapping("/sala/{id}/reservar")
 	public String confirmarReserva(Model model, @PathVariable int id) {
@@ -162,7 +163,45 @@ public class LibReserveController {
 	    return "borrado_sala";
 	}
 	
+	/*
 	
+	@GetMapping("/puesto/{id}/reservar")
+	public String confirmarReservaPuesto(Model model, @PathVariable int id) {
+	    Usuario usuario = usuarioService.findByCorreo("benjabe6872@gmail.com");
+	    Optional<Puesto_lectura> optionalPuesto = puestoService.findById(id);
+	    if (!optionalPuesto.isPresent()) {
+	        return "puesto";
+	    }
 
+	    Puesto_lectura puesto = optionalPuesto.get();
+	    
+	    if (puesto.getDisponible() == false) {
+	        // Si la sala no está disponible
+	        return "nodisponible";
+	    }
+
+	    Date fechaActual = new Date();
+	    Reserva reserva = new Reserva(fechaActual, fechaActual, usuario, puesto);
+	    reservaService.save(reserva);
+	    
+	    puesto.setDisponible(false); 
+	    puestoService.save(puesto);
+	    
+	    return "puestoreservado";
+	}
+	
+	@GetMapping("/puesto/{id}/borrar")
+	public String borrarPuesto(@PathVariable int id) {
+	    Optional<Puesto_lectura> optionalPuesto = puestoService.findById(id);
+	    if (!optionalPuesto.isPresent()) {
+	        return "puesto";
+	    }
+
+	    Puesto_lectura puesto = optionalPuesto.get();
+	    puestoService.deletePuestoById(puesto.getId());
+	    return "borrado_sala";
+	}
+	
+	*/
 
 }

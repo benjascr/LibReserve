@@ -1,5 +1,7 @@
 package com.example.demo.models;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
