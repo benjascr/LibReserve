@@ -24,13 +24,7 @@ public class DatabaseInitializer{
     private SalaRepository salaRepository;
     
     @Autowired
-    private MensajeRepository mensajeRepository;
-    
-    @Autowired
     private PuestoLecturaRepository puestoLecturaRepository;
-    
-    @Autowired
-    private ReservaRepository reservaRepository;
     
     @Autowired
     private UsuarioRepository usuarioRepository;
@@ -38,24 +32,48 @@ public class DatabaseInitializer{
     @PostConstruct
 	public void init() throws IOException, URISyntaxException {
 
-    	// Meter salas
-    	Sala salaA = new Sala("Sala A", "Sala grupal", 2, true);
-    	salaRepository.save(salaA);
-    	Sala salaB = new Sala("Sala B", "Sala grupal", 2, true);
-    	salaRepository.save(salaB);
-    	Sala salaC = new Sala("Sala C", "Sala grupal", 2, true);
-    	salaRepository.save(salaC);
+    	salaRepository.deleteAll();
+    	puestoLecturaRepository.deleteAll();
+    	usuarioRepository.deleteAll();
     	
-		// Meter puestos
-    	Puesto_lectura puestoA = new Puesto_lectura("Puesto 1", "Puesto individual", true);
-    	puestoLecturaRepository.save(puestoA);
-    	Puesto_lectura puestoB = new Puesto_lectura("Puesto 2", "Puesto individual", true);
-    	puestoLecturaRepository.save(puestoB);
-    	Puesto_lectura puestoC = new Puesto_lectura("Puesto 3", "Puesto individual", true);
-    	puestoLecturaRepository.save(puestoC);
+    	long numSalas = salaRepository.count();
+    	if(numSalas == 0) {
+	    	// Meter salas
+	    	Sala salaA = new Sala("Sala 1", "Sala grupal", 2, true);
+	    	salaRepository.save(salaA);
+	    	Sala salaB = new Sala("Sala 2", "Sala grupal", 2, true);
+	    	salaRepository.save(salaB);
+	    	Sala salaC = new Sala("Sala 3", "Sala grupal", 2, true);
+	    	salaRepository.save(salaC);
+	    	Sala salaD = new Sala("Sala 4", "Sala grupal", 2, true);
+	    	salaRepository.save(salaD);
+	    	Sala salaE = new Sala("Sala 5", "Sala grupal", 2, true);
+	    	salaRepository.save(salaE);
+	    	Sala salaF = new Sala("Sala 6", "Sala grupal", 2, true);
+	    	salaRepository.save(salaF);
+    	}
+    	
+    	long numPuestos = puestoLecturaRepository.count();
+    	if(numPuestos == 0) {
+	    	// Meter puestos
+	    	Puesto_lectura puestoA = new Puesto_lectura("Puesto 1", "Puesto individual", true);
+	    	puestoLecturaRepository.save(puestoA);
+	    	Puesto_lectura puestoB = new Puesto_lectura("Puesto 2", "Puesto individual", true);
+	    	puestoLecturaRepository.save(puestoB);
+	    	Puesto_lectura puestoC = new Puesto_lectura("Puesto 3", "Puesto individual", true);
+	    	puestoLecturaRepository.save(puestoC);
+	    	Puesto_lectura puestoD = new Puesto_lectura("Puesto 4", "Puesto individual", true);
+	    	puestoLecturaRepository.save(puestoD);
+	    	Puesto_lectura puestoE = new Puesto_lectura("Puesto 5", "Puesto individual", true);
+	    	puestoLecturaRepository.save(puestoE);
+	    	Puesto_lectura puestoF = new Puesto_lectura("Puesto 6", "Puesto individual", true);
+	    	puestoLecturaRepository.save(puestoF);
+    	}
     	
 		// Meter usuarios
-		usuarioRepository.save(new Usuario("Benja" , "Scrobota" , "benjabe6872@gmail.com" , "1234"));
-		usuarioRepository.save(new Usuario("Administrador"));
+    	Usuario user = new Usuario("Benja" , "Scrobota" , "benjabe6872@gmail.com" , "1234");
+		usuarioRepository.save(user);
+		//Usuario admin = new Usuario("Administrador");
+		//usuarioRepository.save(admin);
 	}
 }

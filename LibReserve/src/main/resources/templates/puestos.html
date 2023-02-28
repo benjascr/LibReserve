@@ -1,0 +1,34 @@
+{{>header}}
+
+<style>
+	.boton {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		width: 100%;
+		margin-top: 20px;
+	}
+
+	.boton button {
+		font-size: 18px;
+		font-weight: bold;
+		padding: 10px 20px;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+
+</style>
+	
+<h2>Puestos de lectura disponibles</h2>
+	<ul class="items">
+		{{#puestos}}
+		<li><a href="/puestos/{{id}}">{{nombre}}</a></li>
+		{{/puestos}}
+	</ul>
+	<div class="boton">
+		<button onclick="location.href='/nuevopuesto'">Nuevo puesto de lectura</button>
+	</div>
+
+
+{{>footer}}

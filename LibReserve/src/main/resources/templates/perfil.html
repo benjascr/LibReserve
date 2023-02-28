@@ -1,0 +1,21 @@
+{{>header}}
+
+<body>
+    <h1>Perfil de Usuario</h1>
+    <p>Nombre: {{usuario.nombre}}</p>
+    <p>Apellidos: {{usuario.apellidos}}</p>
+    <p>Correo: {{usuario.correo}}</p>
+    <h2>Reservas</h2>
+    <p>
+        <th:block th:if="${not #lists.isEmpty(reservas)}" th:each="reserva : ${reservas}">
+            <span th:text="${reserva.sala.nombre}"></span>
+            <span>, </span>
+        </th:block>
+        <th:block th:if="${#lists.isEmpty(reservas)}">
+            <span>No hay reservas disponibles</span>
+        </th:block>
+    </p>
+</body>
+
+
+{{>footer}}

@@ -17,6 +17,22 @@ public class Reserva {
 
     private Date fechaInicio;
     private Date fechaFin;
+    
+    public Reserva(){
+    	
+    }
+    
+    public Reserva(Usuario usuario, Sala sala) {
+    	this.usuario = usuario;
+    	this.sala = sala;
+    }
+    
+    public Reserva(Date fechaInicio, Date fechaFin, Usuario usuario, Sala sala) {
+    	this.fechaInicio = fechaInicio;
+    	this.fechaFin = fechaFin;
+    	this.usuario = usuario;
+    	this.sala = sala;
+    }
 
     public int getId() {
         return id;

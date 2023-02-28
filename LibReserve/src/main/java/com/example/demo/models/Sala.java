@@ -1,5 +1,7 @@
 package com.example.demo.models;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -12,6 +14,9 @@ public class Sala {
 	private String descripcion;
 	private int capacidad;
 	private boolean disponible;
+	
+	@OneToMany(mappedBy = "sala", cascade = CascadeType.ALL)
+	private List<Reserva> reservas;
   
 	public Sala() {
 	}

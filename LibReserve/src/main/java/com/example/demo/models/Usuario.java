@@ -1,5 +1,7 @@
 package com.example.demo.models;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -11,6 +13,9 @@ public class Usuario {
 	private String apellidos;
 	private String correo;
 	private String contrasena;
+	
+	@OneToMany(mappedBy = "usuario")
+	private List<Reserva> reservas;
 	
 	public Usuario() {}
 	
